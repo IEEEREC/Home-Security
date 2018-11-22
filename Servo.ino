@@ -100,11 +100,18 @@ CAYENNE_IN(V3){
   
   if(servoState)
   {
+	  
+      // Unlocking	  
       for (pos = 0; pos <= 180; pos += 5) 
       { // goes from 0 degrees to 180 degree in steps of 1 degree
           myservo.write(pos);              // tell servo to go to position in variable 'pos'
           delay(15);                       // waits 15ms for the servo to reach the position
       }
+	  
+      
+      delay(3000);	// Keep the door open for 3 sec.  
+	  
+      // Locking	  
       for (pos = 180; pos >= 0; pos -= 5) // goes from 180 degrees to 0 degrees
       { 
         myservo.write(pos);              // tell servo to go to position in variable 'pos'
